@@ -62,7 +62,7 @@ public
 ``not change offset`` after operation
 
 ``get{Type}(byteOffset=this.offset, littleEndian=this.isLittleEndian)``
-return: value in TypedRange
+return: ``value`` at offset
 
 
 ### 2. set operations
@@ -70,8 +70,8 @@ return: value in TypedRange
 ``not change offset`` after operation.
 ``CAUTION`` : Argument specification order is different from DataView.
 
-``setType(data, byteOffset=this.offset, littleEndian=this.isLittleEndian)``
-return: void
+``set{Type}(data, byteOffset=this.offset, littleEndian=this.isLittleEndian)``
+return: ``void``
 
 
 ### 3. read operations
@@ -80,7 +80,7 @@ chage offset after operation.
 
 isLittleEndian に基づいてデータを読み、オフセットを進める。
 ``read{Type}(quantity?)``
-return: value at offset, or TypedArray when set quantity.
+return: ``value`` at offset, or ``TypedArray`` has values when set quantity.
 
 ### 4. write operations
 
@@ -88,9 +88,11 @@ chage offset after operation.
 
 ### 5. get byte array Operation
 
-5-1. getBytes ( length, offset = this.offset )
 
 ``not change offset`` after operation
+
+``getBytes ( length, offset = this.offset )``
+return : ``{Array}``
 
 short hand of that:
 
@@ -107,9 +109,9 @@ const rslt = Array.from({length:byte}, (b,i) => {
 default is ``change offset`` after matched.
 when checkOnly flag is true, ``not change offset`` after matched.
 
-6-1. matchBytes(ary, checkOnly=false);
-6-2. matchASCII("ascii", checkOnly=false);
-return boolean
+6-1. ``matchBytes(``ary, checkOnly=false)``;
+6-2. ``matchASCII(``"ascii", checkOnly=false)``;
+return ``{boolean}``
 
 ### 7. read text Operation
 
