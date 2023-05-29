@@ -4,16 +4,6 @@ The ArrayBuffer Editor based DataView (for modern browser).
 1. Easier to manage byteOrder and offsets.
 2. Supports resizable array buffers (some browsers).
 
-|{operation}\{Type}|Uint8|Int8|Uint16|Int16|Uint32|Int32|Float32|BigUint64|BigInt64|Float64|
-|get|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|
-|set|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|✓(1)|
-|read|✓(2)|✓(2)|✓(2)|✓(2)|✓(2)|✓(2)|✓(2)|✓(2)|✓(2)|✓(2)|
-|write|✓(3)|✓(3)|✓(3)|✓(3)|✓(3)|✓(3)|✓(3)|✓(3)|✓(3)|✓(3)|
-
-✓(1) not change offset
-✓(2) chage offset automatically.
-✓(3) chage offset and resize automatically.
-
 ## Usage
 
 ```html
@@ -74,17 +64,6 @@ public
 ``get{Type}(byteOffset=this.offset, littleEndian=this.isLittleEndian)``
 return: value in TypedRange
 
-|method\return||
-|getUint8|number|
-|getInt8|number|
-|getUint16|number|
-|getInt16|number|
-|getUint32|number|
-|getInt32|number|
-|getFloat32|number|
-|getBigUint64|number|
-|getBigInt64|number|
-|getFloat64|number|
 
 ### 2. set operations
 
@@ -94,37 +73,14 @@ return: value in TypedRange
 ``setType(data, byteOffset=this.offset, littleEndian=this.isLittleEndian)``
 return: void
 
-|method\return|void|
-|setUint8||
-|setInt8||
-|setUint16||
-|setInt16||
-|setUint32||
-|setInt32||
-|setFloat32||
-|setBigUint64||
-|setBigInt64||
-|setFloat64||
 
 ### 3. read operations
 
 chage offset after operation.
 
-isLittleEndian に基づいてデータを読み、オフセットを進めます。
+isLittleEndian に基づいてデータを読み、オフセットを進める。
 ``read{Type}(quantity?)``
 return: value at offset, or TypedArray when set quantity.
-
-|method\return|no quantity|quantity|
-|readUint8|number|Uint8Array|
-|readInt8|number|Int8Array|
-|readUint16|number|Uint16Array|
-|readInt16|number|Int16Array|
-|readUint32|number|Uint32Array|
-|readInt32|number|Int32Array|
-|readFloat32|number|Float32Array|
-|readBigUint64|number|BigUint64Array|
-|readBigInt64|number|BigInt64Array|
-|readFloat64|number|Float64Array|
 
 ### 4. write operations
 
