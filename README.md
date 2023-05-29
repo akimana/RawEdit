@@ -109,20 +109,20 @@ const rslt = Array.from({length:byte}, (b,i) => {
 default is ``change offset`` after matched.
 when checkOnly flag is true, ``not change offset`` after matched.
 
-6-1. ``matchBytes(``ary, checkOnly=false)``;
-6-2. ``matchASCII(``"ascii", checkOnly=false)``;
+1. ``matchBytes(``ary, checkOnly=false)``;
+2. ``matchASCII(``"ascii", checkOnly=false)``;
 return ``{boolean}``
 
 ### 7. read text Operation
 
-7-1. readText ()
-7-2. readSJIS ()
-7-3. readUTF8 ()
-7-4. readUTF16 ()
+1. readText ()
+2. readSJIS ()
+3. readUTF8 ()
+4. readUTF16 ()
 
 ### 8. write text Operation
 
-8-2. writeSJIS ()
-8-2. writeUTF8 ()
-8-3. writeUTF16 ()
+1. writeSJIS ()
+2. writeUTF8 ()
+3. writeUTF16 ()
 
